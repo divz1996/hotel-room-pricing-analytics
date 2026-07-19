@@ -25,19 +25,19 @@ Dynamic pricing is critical for hotels because room rates must respond to demand
 
 ### Hotel Pricing Overview
 
-![Hotel pricing overview dashboard](dashboards/screenshots/your-overview-file.png)
+![Hotel pricing overview dashboard](dashboards/screenshots/hotel-overview-dashboard.png)
 
 This page summarises key KPIs including total reservations, room‑type mix, and booking sources, with slicers for date, source, and nation to support revenue management decisions.
 
 ### Room Rate and Source Mix
 
-![Room rate and source mix dashboard](dashboards/screenshots/your-pricing-file.png)
+![Room rate and source mix dashboard](dashboards/screenshots/hotel-pricing-dashboard.png)
 
 This view compares average realised room rates across Deluxe, Club Room, Studio and Suite categories, and highlights contribution by core channels such as Company Sales Team and Online Aggregators.
 
 ### Trend and Seasonality Analysis
 
-![Trend and seasonality dashboard](dashboards/screenshots/your-trend-file.png)
+![Trend and seasonality dashboard](dashboards/screenshots/hotel-trend-dashboard.png)
 
 This dashboard tracks monthly arrival and reservation trends, surfaces seasonality patterns, and shows how booking sources and geographies contribute across the fiscal year.
 ## Dataset
