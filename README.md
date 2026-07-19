@@ -4,11 +4,11 @@ End-to-end hospitality analytics project focused on hotel room pricing, booking 
 
 ## Project Overview
 
-This project analyses multi-year hotel reservation data to optimise dynamic room pricing and improve revenue management for a Chennai-based hotel property with 200 rooms and 3 restaurants.[cite:1] Using data analytics and machine learning, the work aims to predict optimal room rates, uncover demand patterns across sources and seasons, and support decision-making through an interactive Power BI dashboard.[cite:1][cite:2]
+This project analyses multi-year hotel reservation data to optimise dynamic room pricing and improve revenue management for a Chennai-based hotel property with 200 rooms and 3 restaurants. Using data analytics and machine learning, the work aims to predict optimal room rates, uncover demand patterns across sources and seasons, and support decision-making through an interactive Power BI dashboard.
 
 ## Business Problem
 
-Dynamic pricing is critical for hotels because room rates must respond to demand, seasonality, and booking behaviour to maximise both occupancy and revenue. The specific business problem addressed here is optimising room rates for the hotel **“Raintree – Anna Salai”** using historical reservation data for fiscal years 2018 and 2019.[cite:1] The project was commissioned to:
+Dynamic pricing is critical for hotels because room rates must respond to demand, seasonality, and booking behaviour to maximise both occupancy and revenue. The specific business problem addressed here is optimising room rates for the hotel **“Raintree – Anna Salai”** using historical reservation data for fiscal years 2018 and 2019. The project was commissioned to:
 
 - Predict the optimal room rate that maximises revenue per room night.
 - Track booking patterns in near real time to understand demand trends by source, room type and period.
@@ -16,14 +16,14 @@ Dynamic pricing is critical for hotels because room rates must respond to demand
 
 ## Objectives
 
-- Build a predictive model to estimate room rates based on reservation-level features.[cite:1]
+- Build a predictive model to estimate room rates based on reservation-level features.
 - Analyse booking behaviour by source, room type, continent and time period.
 - Design an interactive Power BI dashboard to monitor reservations, rates and booking mix.
 - Recommend pricing and data quality improvements to increase revenue realisation.
 
 ## Dataset
 
-The core dataset consists of daily reservation-level records for fiscal years 2018 and 2019, with 10 primary fields:[cite:1]
+The core dataset consists of daily reservation-level records for fiscal years 2018 and 2019, with 10 primary fields:
 
 - **Name** – Guest name.
 - **Reservation No** – Unique ERP-generated reservation identifier.
@@ -40,73 +40,73 @@ Additional processed datasets capture time series of room rates and aggregated b
 
 ## Data Preparation and Feature Engineering
 
-The data preparation workflow transforms raw ERP exports into an analytical dataset suitable for modeling and dashboarding:[cite:1]
+The data preparation workflow transforms raw ERP exports into an analytical dataset suitable for modeling and dashboarding:
 
-- **Room type grouping** – 14 ERP room types are grouped into business-friendly categories: Deluxe, Club Room, Studio and Suite, based on similar pricing behaviour.[cite:1]
-- **Geographic aggregation** – Guests from 118 countries are grouped into continents (Africa, Asia, Australia, Europe, North America, South America, United Nations) for segment-level analysis.[cite:1]
-- **Missing value treatment** – Null values in booking source are dropped; null values in continent are replaced with India where appropriate; records with room rates equal to 0 are removed.[cite:1]
-- **New feature: Duration** – Length of stay in days is calculated from arrival and departure dates.[cite:1]
-- **Encoding categorical variables** – Room type, source, and continent are encoded for use in machine learning models.[cite:1]
-- **Outlier treatment** – Outliers in duration and booking time are capped at 4 days and 36 days respectively, and log transformation is applied to room rates to improve distributional properties.[cite:1]
+- **Room type grouping** – 14 ERP room types are grouped into business-friendly categories: Deluxe, Club Room, Studio and Suite, based on similar pricing behaviour.
+- **Geographic aggregation** – Guests from 118 countries are grouped into continents (Africa, Asia, Australia, Europe, North America, South America, United Nations) for segment-level analysis.
+- **Missing value treatment** – Null values in booking source are dropped; null values in continent are replaced with India where appropriate; records with room rates equal to 0 are removed.
+- **New feature: Duration** – Length of stay in days is calculated from arrival and departure dates.
+- **Encoding categorical variables** – Room type, source, and continent are encoded for use in machine learning models.
+- **Outlier treatment** – Outliers in duration and booking time are capped at 4 days and 36 days respectively, and log transformation is applied to room rates to improve distributional properties.
 
 ## Exploratory Data Analysis
 
-Exploratory analysis highlights key patterns in booking volumes and pricing.[cite:1]
+Exploratory analysis highlights key patterns in booking volumes and pricing.
 
 ### Booking Volume and Seasonality
 
-- Fiscal years 2018 and 2019 both show higher reservation counts in Q1 and Q4, with relatively lower activity in Q2 and Q3, indicating seasonal peaks at the start and end of the year.[cite:1]
+- Fiscal years 2018 and 2019 both show higher reservation counts in Q1 and Q4, with relatively lower activity in Q2 and Q3, indicating seasonal peaks at the start and end of the year.
 - Quarterly reservation counts (sample):  
-  - 2018 – Q1: 12,017; Q2: 10,728; Q3: 10,675; Q4: 10,855.[cite:1]  
-  - 2019 – Q1: 12,935; Q2: 10,652; Q3: 10,821; Q4: 12,270.[cite:1]
+  - 2018 – Q1: 12,017; Q2: 10,728; Q3: 10,675; Q4: 10,855.  
+  - 2019 – Q1: 12,935; Q2: 10,652; Q3: 10,821; Q4: 12,270.
 
 ### Source Performance
 
-Booking sources contribute very differently to overall volume:[cite:1]
+Booking sources contribute very differently to overall volume:
 
 | Source                 | Reservations |
 |------------------------|-------------:|
-| Company Sales Team     | 37,908[cite:1] |
-| Online Aggregators     | 32,220[cite:1] |
-| Travel Agency – USA    | 5,188[cite:1] |
-| Travel Agency – Europe | 1,674[cite:1] |
-| Others                 | 14,261[cite:1] |
+| Company Sales Team     | 37,908 |
+| Online Aggregators     | 32,220 |
+| Travel Agency – USA    | 5,188 |
+| Travel Agency – Europe | 1,674 |
+| Others                 | 14,261 |
 
 ### Room Rate by Room Type
 
-Average realised room rates vary materially across room types:[cite:1]
+Average realised room rates vary materially across room types:
 
 | Room Type  | Avg Room Rate (INR) |
 |-----------|---------------------:|
-| Deluxe    | 4,945[cite:1]        |
-| Club Room | 5,430[cite:1]        |
-| Studio    | 4,846[cite:1]        |
-| Suite     | 8,192[cite:1]        |
+| Deluxe    | 4,945                |
+| Club Room | 5,430                |
+| Studio    | 4,846                |
+| Suite     | 8,192                |
 
-Notably, Studio rooms – considered a higher-end category – realise lower average rates than Club Rooms, signalling a potential misalignment in pricing or positioning.[cite:1]
+Notably, Studio rooms – considered a higher-end category – realise lower average rates than Club Rooms, signalling a potential misalignment in pricing or positioning.
 
 ## Model Development
 
-The modeling workflow focuses on predicting room rates using reservation-level features.[cite:1]
+The modeling workflow focuses on predicting room rates using reservation-level features.
 
 ### Approach
 
 - Train/test split of the prepared analytical dataset.
-- Baseline **Linear Regression** model fitted to estimate room rates.[cite:1]
-- Model refinement attempts via cross-validation (K-Fold) and LASSO regularisation.[cite:1]
-- Additional experiments with **Decision Tree** and **Random Forest** models, including hyperparameter tuning.[cite:1]
+- Baseline **Linear Regression** model fitted to estimate room rates.
+- Model refinement attempts via cross-validation (K-Fold) and LASSO regularisation.
+- Additional experiments with **Decision Tree** and **Random Forest** models, including hyperparameter tuning.
 
 ### Performance
 
-- The linear regression model achieved an RMSE of 17.90% and an R-squared of 14.17%.[cite:1]
-- Decision Tree model RMSE was around 955 even after grid-search-based hyperparameter tuning.[cite:1]
-- Random Forest model reached an out-of-bag (OOB) score of 0.39.[cite:1]
+- The linear regression model achieved an RMSE of 17.90% and an R-squared of 14.17%.
+- Decision Tree model RMSE was around 955 even after grid-search-based hyperparameter tuning.
+- Random Forest model reached an out-of-bag (OOB) score of 0.39.
 
 These results suggest that the available features explain only part of the variability in room rates, and that incorporating richer drivers (e.g., competitor pricing, occupancy levels, marketing campaigns, events) would be necessary to materially improve predictive performance.
 
 ## Power BI Dashboard
 
-An interactive Power BI dashboard complements the notebooks by visualising key metrics for pricing and demand analysis.[cite:2]
+An interactive Power BI dashboard complements the notebooks by visualising key metrics for pricing and demand analysis.
 
 ### Key Views
 
@@ -121,22 +121,22 @@ Dashboard screenshots are available in the `dashboards/screenshots/` directory f
 
 ## Business Insights and Recommendations
 
-The combined analysis and modeling effort led to several practical insights:[cite:1]
+The combined analysis and modeling effort led to several practical insights:
 
-- **Seasonal peaks** – Demand is stronger in Q1 and Q4, suggesting opportunities for premium pricing, targeted promotions and capacity planning during these periods.[cite:1]
-- **Source mix optimisation** – Company Sales Team and Online Aggregators together drive the bulk of reservations, but their realised rates differ by room type, indicating room for channel-specific pricing strategies.[cite:1]
-- **Studio room pricing** – Studio rooms, despite being a higher category, realise lower average rates than Club Rooms and Deluxe rooms. The hotel should reassess Studio pricing, value communication, and bundling to capture more revenue per room night.[cite:1]
-- **Data quality improvements** – Incomplete capture of critical fields such as number of adults/children and nationality limits deeper analysis; improving data capture processes will enhance future analytics and model performance.[cite:1]
+- **Seasonal peaks** – Demand is stronger in Q1 and Q4, suggesting opportunities for premium pricing, targeted promotions and capacity planning during these periods.
+- **Source mix optimisation** – Company Sales Team and Online Aggregators together drive the bulk of reservations, but their realised rates differ by room type, indicating room for channel-specific pricing strategies.
+- **Studio room pricing** – Studio rooms, despite being a higher category, realise lower average rates than Club Rooms and Deluxe rooms. The hotel should reassess Studio pricing, value communication, and bundling to capture more revenue per room night.
+- **Data quality improvements** – Incomplete capture of critical fields such as number of adults/children and nationality limits deeper analysis; improving data capture processes will enhance future analytics and model performance.
 
-Specific source-wise average rate comparisons highlight how revenue per room night varies by channel:[cite:1]
+Specific source-wise average rate comparisons highlight how revenue per room night varies by channel:
 
 | Particulars              | Deluxe (INR) | Club Room (INR) | Studio (INR) | Suite (INR) |
 |--------------------------|-------------:|----------------:|-------------:|------------:|
-| Online Aggregators       | 4,825[cite:1] | 5,552[cite:1]   | 5,419[cite:1] | 8,316[cite:1] |
-| Others                   | 4,960[cite:1] | 5,096[cite:1]   | 4,845[cite:1] | 6,655[cite:1] |
-| Sales Team               | 5,128[cite:1] | 5,505[cite:1]   | 4,717[cite:1] | 8,443[cite:1] |
-| Travel Agency – Europe   | 4,834[cite:1] | 5,345[cite:1]   | 5,716[cite:1] | 6,768[cite:1] |
-| Travel Agency - USA      | 4,355[cite:1] | 4,853[cite:1]   | 4,688[cite:1] | 7,651[cite:1] |
+| Online Aggregators       | 4,825        | 5,552           | 5,419        | 8,316       |
+| Others                   | 4,960        | 5,096           | 4,845        | 6,655       |
+| Sales Team               | 5,128        | 5,505           | 4,717        | 8,443       |
+| Travel Agency – Europe   | 4,834        | 5,345           | 5,716        | 6,768       |
+| Travel Agency - USA      | 4,355        | 4,853           | 4,688        | 7,651       |
 
 ## Repository Structure
 
@@ -166,7 +166,7 @@ hotel-room-pricing-analytics/
 - Python and Jupyter Notebook for data preparation, exploratory analysis and modeling.
 - Excel and CSV/Excel time-series workbooks for raw and intermediate data.
 - Power BI for interactive dashboarding and visual analytics.
-- Classical machine learning techniques including linear regression, decision tree, random forest, cross-validation and regularisation.[cite:1][cite:2]
+- Classical machine learning techniques including linear regression, decision tree, random forest, cross-validation and regularisation.
 
 ## How to Navigate This Repo
 
@@ -174,6 +174,6 @@ hotel-room-pricing-analytics/
 - Explore `docs/data_dictionary.md` for a detailed description of dataset fields.
 - Open `notebooks/pricing_modeling.ipynb` to review data preparation, EDA and pricing model experiments.
 - Open `notebooks/time_series_forecasting.ipynb` to see time-series analysis and forecasting.
-- Review `data/raw/` and `data/processed/` to understand the raw inputs and analytical datasets.
+- Review `data/raw/` and `data/processed` to understand the raw inputs and analytical datasets.
 - Open `dashboards/hotel_pricing_dashboard.pbix` in Power BI, or inspect images in `dashboards/screenshots/` for a quick visual tour.
 - Refer to `reports/project_presentation.pdf` for a slide-based narrative of the project.
