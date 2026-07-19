@@ -64,13 +64,13 @@ Exploratory analysis highlights key patterns in booking volumes and pricing.
 
 Booking sources contribute very differently to overall volume:
 
-| Source                | Reservations |
-|-----------------------|-------------:|
-| Company Sales Team    |       37,908 |
-| Online Aggregators    |       32,220 |
-| Travel Agency – USA   |        5,188 |
-| Travel Agency – Europe|        1,674 |
-| Others                |       14,261 |
+| Source                 | Reservations |
+|------------------------|-------------:|
+| Company Sales Team     |       37,908 |
+| Online Aggregators     |       32,220 |
+| Travel Agency – USA    |        5,188 |
+| Travel Agency – Europe |        1,674 |
+| Others                 |       14,261 |
 
 ### Room Rate by Room Type
 
@@ -83,97 +83,4 @@ Average realised room rates vary materially across room types:
 | Studio    |                4,846 |
 | Suite     |                8,192 |
 
-Notably, Studio rooms – considered a higher-end category – realise lower average rates than Club Rooms, signalling a potential misalignment in pricing or positioning.
-
-## Model Development
-
-The modeling workflow focuses on predicting room rates using reservation-level features.
-
-### Approach
-
-- Train/test split of the prepared analytical dataset.
-- Baseline **Linear Regression** model fitted to estimate room rates.
-- Model refinement attempts via cross-validation (K-Fold) and LASSO regularisation.
-- Additional experiments with **Decision Tree** and **Random Forest** models, including hyperparameter tuning.
-
-### Performance
-
-- The linear regression model achieved an RMSE of 17.90% and an R-squared of 14.17%.
-- Decision Tree model RMSE was around 955 even after grid-search-based hyperparameter tuning.
-- Random Forest model reached an out-of-bag (OOB) score of 0.39.
-
-These results suggest that the available features explain only part of the variability in room rates, and that incorporating richer drivers (e.g., competitor pricing, occupancy levels, marketing campaigns, events) would be necessary to materially improve predictive performance.
-
-## Power BI Dashboard
-
-An interactive Power BI dashboard complements the notebooks by visualising key metrics for pricing and demand analysis.
-
-### Key Views
-
-- **Room Rate by Room Type** – Donut chart showing average room rate across Deluxe, Club Room, Studio and Suite categories.
-- **Room Rate by Source Group and Room Type** – Clustered bar chart comparing average room rate across booking sources for each room type.
-- **Bookings by Source Group** – Donut chart showing mix of reservations by source group (Sales Team, Online Aggregators, Others, Travel Agencies).
-- **Quarterly Reservations** – Bar chart of reservation counts by quarter and year.
-- **Monthly Trend Analysis** – Line charts showing count of arrivals and reservations by month and year.
-- **Consolidated Dashboard and Final Trend Analysis** – Multi-panel views combining KPIs (e.g., number of reservations, number of countries visited, room-type counts) with trend lines and source breakdowns.
-
-Dashboard screenshots are available in the `dashboards/screenshots/` directory for quick visual inspection.
-
-## Business Insights and Recommendations
-
-The combined analysis and modeling effort led to several practical insights:
-
-- **Seasonal peaks** – Demand is stronger in Q1 and Q4, suggesting opportunities for premium pricing, targeted promotions and capacity planning during these periods.
-- **Source mix optimisation** – Company Sales Team and Online Aggregators together drive the bulk of reservations, but their realised rates differ by room type, indicating room for channel-specific pricing strategies.
-- **Studio room pricing** – Studio rooms, despite being a higher category, realise lower average rates than Club Rooms and Deluxe rooms. The hotel should reassess Studio pricing, value communication, and bundling to capture more revenue per room night.
-- **Data quality improvements** – Incomplete capture of critical fields such as number of adults/children and nationality limits deeper analysis; improving data capture processes will enhance future analytics and model performance.
-
-Specific source-wise average rate comparisons highlight how revenue per room night varies by channel:
-
-| Particulars             | Deluxe (INR) | Club Room (INR) | Studio (INR) | Suite (INR) |
-|-------------------------|-------------:|----------------:|-------------:|------------:|
-| Online Aggregators      |        4,825 |           5,552 |        5,419 |       8,316 |
-| Others                  |        4,960 |           5,096 |        4,845 |       6,655 |
-| Sales Team              |        5,128 |           5,505 |        4,717 |       8,443 |
-| Travel Agency – Europe  |        4,834 |           5,345 |        5,716 |       6,768 |
-| Travel Agency – USA     |        4,355 |           4,853 |        4,688 |       7,651 |
-
-## Repository Structure
-
-The repository is organised to mirror the end-to-end analytics workflow:
-
-```text
-hotel-room-pricing-analytics/
-├── README.md
-├── .gitignore
-├── data/
-│   ├── raw/             # Original ERP exports (year-wise reservation data)
-│   └── processed/       # Cleaned/aggregated time-series datasets
-├── notebooks/
-│   ├── pricing_modeling.ipynb         # Data prep, EDA and pricing model development
-│   └── time_series_forecasting.ipynb  # Time-series analysis and forecasting
-├── dashboards/
-│   ├── hotel_pricing_dashboard.pbix   # Power BI report
-│   └── screenshots/                   # Dashboard preview images
-├── reports/
-│   └── project_presentation.pdf       # Project presentation
-└── docs/
-    └── data_dictionary.md             # Field-level documentation
-```
-
-## Tools and Technologies
-
-- Python and Jupyter Notebook for data preparation, exploratory analysis and modeling.
-- Excel and CSV/Excel time-series workbooks for raw and intermediate data.
-- Power BI for interactive dashboarding and visual analytics.
-- Classical machine learning techniques including linear regression, decision tree, random forest, cross-validation and regularisation.
-
-## How to Navigate This Repo
-
-- Start with `README.md` to understand the business context and key insights.
-- Explore `docs/data_dictionary.md` for a detailed description of dataset fields.
-- Open `notebooks/pricing_modeling.ipynb` to review data preparation, EDA and pricing model experiments.
-- Open `notebooks/time_series_forecasting.ipynb` to see time-series analysis and forecasting.
-- Review `data/raw/` and `data/processed/` to understand the raw inputs and analytical datasets.
-- Open `dashboards/hotel_pricing_dashboard.pbix` in Power BI, or inspect images in `dashboards/screenshots/` for a quick visual tour.
-- Refer to `reports/project_presentation.pdf` for a slide-based narrative of the project.
+Notably, Studio rooms – considered a higher-end category – realise 
