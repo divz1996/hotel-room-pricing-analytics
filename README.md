@@ -4,7 +4,7 @@ End-to-end hospitality analytics project focused on hotel room pricing, booking 
 
 ## Project Overview
 
-This project analyses multi-year hotel reservation data to optimise dynamic room pricing and improve revenue management for a Chennai-based hotel property with 200 rooms and 3 restaurants. Using data analytics and machine learning, the work aims to predict optimal room rates, uncover demand patterns across sources and seasons, and support decision-making through an interactive Power BI dashboard.
+This project analyses multi-year hotel reservation data to optimise dynamic room pricing and improve revenue management for a Chennai-based hotel property with 200 rooms and 3 restaurants. Using data analytics and machine learning, the work aims to predict optimal room rates, uncover demand patterns across sources and seasons, and support decision-making through an interactive Power BI dashboard. The final deliverable is an interactive Power BI dashboard; key views are showcased in the screenshots below.
 
 ## Business Problem
 
@@ -102,4 +102,4 @@ Average realised room rates vary materially across room types:
 | Studio    |                4,846 |
 | Suite     |                8,192 |
 
-Notably, Studio rooms – considered a higher-end category – realise 
+Notably, Studio rooms – considered a higher-end category – realise lower average rates than Suites, indicating scope to refine positioning and pricing for this segment.
