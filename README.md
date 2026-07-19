@@ -56,32 +56,32 @@ Exploratory analysis highlights key patterns in booking volumes and pricing.
 ### Booking Volume and Seasonality
 
 - Fiscal years 2018 and 2019 both show higher reservation counts in Q1 and Q4, with relatively lower activity in Q2 and Q3, indicating seasonal peaks at the start and end of the year.
-- Quarterly reservation counts (sample):  
-  - 2018 – Q1: 12,017; Q2: 10,728; Q3: 10,675; Q4: 10,855.  
+- Quarterly reservation counts (sample):
+  - 2018 – Q1: 12,017; Q2: 10,728; Q3: 10,675; Q4: 10,855.
   - 2019 – Q1: 12,935; Q2: 10,652; Q3: 10,821; Q4: 12,270.
 
 ### Source Performance
 
 Booking sources contribute very differently to overall volume:
 
-| Source                 | Reservations |
-|------------------------|-------------:|
-| Company Sales Team     | 37,908 |
-| Online Aggregators     | 32,220 |
-| Travel Agency – USA    | 5,188 |
-| Travel Agency – Europe | 1,674 |
-| Others                 | 14,261 |
+| Source                | Reservations |
+|-----------------------|-------------:|
+| Company Sales Team    |       37,908 |
+| Online Aggregators    |       32,220 |
+| Travel Agency – USA   |        5,188 |
+| Travel Agency – Europe|        1,674 |
+| Others                |       14,261 |
 
 ### Room Rate by Room Type
 
 Average realised room rates vary materially across room types:
 
-| Room Type  | Avg Room Rate (INR) |
+| Room Type | Avg Room Rate (INR) |
 |-----------|---------------------:|
-| Deluxe    | 4,945                |
-| Club Room | 5,430                |
-| Studio    | 4,846                |
-| Suite     | 8,192                |
+| Deluxe    |                4,945 |
+| Club Room |                5,430 |
+| Studio    |                4,846 |
+| Suite     |                8,192 |
 
 Notably, Studio rooms – considered a higher-end category – realise lower average rates than Club Rooms, signalling a potential misalignment in pricing or positioning.
 
@@ -130,13 +130,13 @@ The combined analysis and modeling effort led to several practical insights:
 
 Specific source-wise average rate comparisons highlight how revenue per room night varies by channel:
 
-| Particulars              | Deluxe (INR) | Club Room (INR) | Studio (INR) | Suite (INR) |
-|--------------------------|-------------:|----------------:|-------------:|------------:|
-| Online Aggregators       | 4,825        | 5,552           | 5,419        | 8,316       |
-| Others                   | 4,960        | 5,096           | 4,845        | 6,655       |
-| Sales Team               | 5,128        | 5,505           | 4,717        | 8,443       |
-| Travel Agency – Europe   | 4,834        | 5,345           | 5,716        | 6,768       |
-| Travel Agency - USA      | 4,355        | 4,853           | 4,688        | 7,651       |
+| Particulars             | Deluxe (INR) | Club Room (INR) | Studio (INR) | Suite (INR) |
+|-------------------------|-------------:|----------------:|-------------:|------------:|
+| Online Aggregators      |        4,825 |           5,552 |        5,419 |       8,316 |
+| Others                  |        4,960 |           5,096 |        4,845 |       6,655 |
+| Sales Team              |        5,128 |           5,505 |        4,717 |       8,443 |
+| Travel Agency – Europe  |        4,834 |           5,345 |        5,716 |       6,768 |
+| Travel Agency – USA     |        4,355 |           4,853 |        4,688 |       7,651 |
 
 ## Repository Structure
 
@@ -147,18 +147,18 @@ hotel-room-pricing-analytics/
 ├── README.md
 ├── .gitignore
 ├── data/
-│   ├── raw/                  # Original ERP exports (year-wise reservation data)
-│   └── processed/            # Cleaned/aggregated time-series datasets
+│   ├── raw/             # Original ERP exports (year-wise reservation data)
+│   └── processed/       # Cleaned/aggregated time-series datasets
 ├── notebooks/
-│   ├── pricing_modeling.ipynb        # Data prep, EDA and pricing model development
-│   └── time_series_forecasting.ipynb # Time-series analysis and forecasting
+│   ├── pricing_modeling.ipynb         # Data prep, EDA and pricing model development
+│   └── time_series_forecasting.ipynb  # Time-series analysis and forecasting
 ├── dashboards/
-│   ├── hotel_pricing_dashboard.pbix  # Power BI report
-│   └── screenshots/                  # Dashboard preview images
+│   ├── hotel_pricing_dashboard.pbix   # Power BI report
+│   └── screenshots/                   # Dashboard preview images
 ├── reports/
-│   └── project_presentation.pdf      # Project presentation
+│   └── project_presentation.pdf       # Project presentation
 └── docs/
-    └── data_dictionary.md           # Field-level documentation
+    └── data_dictionary.md             # Field-level documentation
 ```
 
 ## Tools and Technologies
@@ -174,6 +174,6 @@ hotel-room-pricing-analytics/
 - Explore `docs/data_dictionary.md` for a detailed description of dataset fields.
 - Open `notebooks/pricing_modeling.ipynb` to review data preparation, EDA and pricing model experiments.
 - Open `notebooks/time_series_forecasting.ipynb` to see time-series analysis and forecasting.
-- Review `data/raw/` and `data/processed` to understand the raw inputs and analytical datasets.
+- Review `data/raw/` and `data/processed/` to understand the raw inputs and analytical datasets.
 - Open `dashboards/hotel_pricing_dashboard.pbix` in Power BI, or inspect images in `dashboards/screenshots/` for a quick visual tour.
 - Refer to `reports/project_presentation.pdf` for a slide-based narrative of the project.
